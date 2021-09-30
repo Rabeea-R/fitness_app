@@ -24,11 +24,7 @@ class SliderState extends State<Sliderr> {
     super.initState();
 
     slides.add(
-      Slide(
-          title: 'Train like 2x Pro'
-              'Fitness Model World '
-              'Champion Williams Falade',
-          backgroundImage: "images/slider1-image.jpg"),
+      Slide(title: kt, backgroundImage: "images/slider1-image.jpg"),
     );
     slides.add(
       Slide(
@@ -40,45 +36,17 @@ class SliderState extends State<Sliderr> {
             Padding(
               padding: const EdgeInsets.fromLTRB(30.0, 350.0, 30.0, 20.0),
               child: SizedBox(
-                width: 230.0,
+                width: 190.0,
                 height: 50.0,
-                child: ClipRRect(
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned.fill(
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: <Color>[
-                                Color(0xFF0D47A1),
-                                Color(0xFF1976D2),
-                                Color(0xFF42A5F5),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      TextButton(
-                        style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(Colors.blue),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.blue),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                            ),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          'Get Started',
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        ),
-                      ),
-                    ],
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0),
+                    ),
                   ),
+                  child: Text('Get Started'),
                 ),
               ),
             ),
@@ -95,7 +63,7 @@ class SliderState extends State<Sliderr> {
 
   @override
   Widget build(BuildContext context) {
-    return new IntroSlider(
+    return IntroSlider(
       slides: this.slides,
       onDonePress: this.onDonePress,
     );
