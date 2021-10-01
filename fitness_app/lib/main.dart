@@ -1,9 +1,11 @@
 import 'package:fitness_app/login_page.dart';
+import 'package:fitness_app/plans.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'slider1.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
+import 'plans.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +26,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           Sliderr.routeName: (context) => Sliderr(),
-          Login_Page.routeName: (context) => Login_Page()
+          Login_Page.routeName: (context) => Login_Page(),
+          Plans.routeName: (context) => Plans()
         });
   }
 }

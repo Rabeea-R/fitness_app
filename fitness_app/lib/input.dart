@@ -21,7 +21,7 @@ class Input extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           Container(
@@ -29,14 +29,14 @@ class Input extends StatelessWidget {
                 color: Colors.black87, borderRadius: BorderRadius.circular(10)),
             child: InputField(),
           ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           LoginButtons(),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
-          Text(
+          const Text(
             "SignUp",
             style: TextStyle(
               color: Colors.white,
