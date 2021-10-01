@@ -11,6 +11,18 @@ class Plans extends StatefulWidget {
 class _PlansState extends State<Plans> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(
+            child: Image.asset('images/plan_logo.png', fit: BoxFit.cover)),
+        backgroundColor: Colors.transparent,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
+          ),
+        ],
+      ),
+    );
   }
 }
