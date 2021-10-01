@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     Timer(
-      Duration(seconds: 3),
+      Duration(seconds: 1),
       () => Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Sliderr())),
     );

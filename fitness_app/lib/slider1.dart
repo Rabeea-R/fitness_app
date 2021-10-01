@@ -1,3 +1,4 @@
+import 'package:fitness_app/login_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:intro_slider/intro_slider.dart';
@@ -39,7 +40,12 @@ class SliderState extends State<Sliderr> {
                 width: 190.0,
                 height: 50.0,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Login_Page()),
+                    );
+                  },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.blue,
                     shape: RoundedRectangleBorder(
