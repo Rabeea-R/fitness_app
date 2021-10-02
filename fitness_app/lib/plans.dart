@@ -28,7 +28,7 @@ class _PlansState extends State<Plans> {
         color: Colors.blueGrey[900],
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             Center(
@@ -48,27 +48,49 @@ class _PlansState extends State<Plans> {
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold),
               ),
-            )
-          ListView(
-  padding: const EdgeInsets.all(8),
-  children: <Widget>[
-    Container(
-      height: 50,
-      color: Colors.amber[600],
-      child: const Center(child: Text('Entry A')),
-    ),
-    Container(
-      height: 50,
-      color: Colors.amber[500],
-      child: const Center(child: Text('Entry B')),
-    ),
-    Container(
-      height: 50,
-      color: Colors.amber[100],
-      child: const Center(child: Text('Entry C')),
-    ),
-  ],
-)
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            Expanded(
+              child: ListView.builder(
+                  padding: const EdgeInsets.all(8),
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Column(
+                      children: [
+                        Container(
+                          height: 90,
+                          width: 400,
+                          color: Colors.grey,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: Image.asset(
+                                  'images/plan_1.png',
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              Expanded(
+                                flex: 8,
+                                child: Column(
+                                  children: <Widget>[
+                                    new Text("Your Text Here"),
+                                    new Text("Your Price Here"),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    );
+                  }),
+            ),
           ],
         ),
       ),
