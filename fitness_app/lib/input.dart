@@ -13,10 +13,10 @@ class Input extends StatelessWidget {
           Expanded(
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(60.0, 10.0, 60.0, 10.0),
+                padding: const EdgeInsets.fromLTRB(50.0, 0.0, 50.0, 0.0),
                 child: Image.asset(
                   'images/login_logo.png',
-                  width: 500.0,
+                  width: 600.0,
                 ),
               ),
             ),
@@ -36,14 +36,7 @@ class Input extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          const Text(
-            "SignUp",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16.0,
-              decoration: TextDecoration.underline,
-            ),
-          ),
+          RegisterButton(),
         ],
       ),
     );
