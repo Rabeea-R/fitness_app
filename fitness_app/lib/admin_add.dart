@@ -8,6 +8,10 @@ class Add_Plan extends StatefulWidget {
 }
 
 class _Add_PlanState extends State<Add_Plan> {
+  String planname = 'PlanName';
+  String plandescription = 'PlanDescription';
+  String planprice = 'PlanPrice';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +21,11 @@ class _Add_PlanState extends State<Add_Plan> {
             padding: EdgeInsets.all(10),
             decoration: const BoxDecoration(
                 border: Border(bottom: BorderSide(color: Colors.grey))),
-            child: const TextField(
+            child: TextField(
+              style: TextStyle(color: Colors.grey),
+              onChanged: (value) {
+                planname = value;
+              },
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                   hintText: "Name",
@@ -29,7 +37,11 @@ class _Add_PlanState extends State<Add_Plan> {
             padding: EdgeInsets.all(10),
             decoration: const BoxDecoration(
                 border: Border(bottom: BorderSide(color: Colors.grey))),
-            child: const TextField(
+            child: TextField(
+              style: TextStyle(color: Colors.grey),
+              onChanged: (value) {
+                plandescription = value;
+              },
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                   hintText: "Description",
@@ -41,7 +53,11 @@ class _Add_PlanState extends State<Add_Plan> {
             padding: EdgeInsets.all(10),
             decoration: const BoxDecoration(
                 border: Border(bottom: BorderSide(color: Colors.grey))),
-            child: const TextField(
+            child: TextField(
+              style: TextStyle(color: Colors.grey),
+              onChanged: (value) {
+                planprice = value;
+              },
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                   hintText: "Price",
@@ -54,7 +70,11 @@ class _Add_PlanState extends State<Add_Plan> {
             onPressed: () {},
             child: Text("upload video"),
           ),
-          TextButton(onPressed: () {}, child: Text('Save Plan'))
+          TextButton(
+              onPressed: () {
+                print('yes');
+              },
+              child: Text('Save Plan'))
         ],
       ),
     );

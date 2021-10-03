@@ -3,6 +3,8 @@ import 'package:fitness_app/login_page.dart';
 import 'package:flutter/services.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fitness_app/plans.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -31,8 +33,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.green,
         ),
-        home: Main_Page(),
-        //home: MyHomePage(),
+        //home: Main_Page(),
+        home: MyHomePage(),
         debugShowCheckedModeBanner: false,
         routes: {
           Sliderr.routeName: (context) => Sliderr(),
