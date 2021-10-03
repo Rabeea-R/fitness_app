@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'loginbuttons.dart';
-import 'InputField.dart';
+import 'input_field.dart';
 
 class Input extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(30),
+      padding: const EdgeInsets.all(30),
       child: Column(
         children: <Widget>[
           Expanded(

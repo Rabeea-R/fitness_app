@@ -1,4 +1,8 @@
+import 'package:fitness_app/admin_panel.dart';
 import 'package:fitness_app/login_page.dart';
+import 'package:flutter/services.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness_app/plans.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -6,9 +10,14 @@ import 'slider1.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
 import 'plans.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,12 +31,14 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.green,
         ),
-        home: MyHomePage(),
+        home: Main_Page(),
+        //home: MyHomePage(),
         debugShowCheckedModeBanner: false,
         routes: {
           Sliderr.routeName: (context) => Sliderr(),
           Login_Page.routeName: (context) => Login_Page(),
-          Plans.routeName: (context) => Plans()
+          Plans.routeName: (context) => Plans(),
+          // Main_Page.routeName: (context) => Main_Page(),
         });
   }
 }
