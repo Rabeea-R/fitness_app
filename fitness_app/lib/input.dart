@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'loginbuttons.dart';
 import 'input_field.dart';
+import 'register.dart';
 
 class Input extends StatelessWidget {
   @override
@@ -34,9 +35,33 @@ class Input extends StatelessWidget {
           ),
           LoginButtons(),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
-          RegisterButton(),
+          //RegisterButton(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                'Dont\'t have an account? ',
+                style: TextStyle(color: Colors.white),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Register()),
+                  );
+                },
+                child: const Text(
+                  'SignUp',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15),
+                ),
+              )
+            ],
+          )
         ],
       ),
     );

@@ -2,6 +2,7 @@ import 'package:fitness_app/input_field.dart';
 import 'package:fitness_app/loginbuttons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
+import 'login_page.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -39,11 +40,33 @@ class _RegisterState extends State<Register> {
                   padding: EdgeInsets.all(50),
                   child: Register_fields(),
                 ),
-                SignUpButton(),
-                const SizedBox(
-                  height: 25.0,
-                ),
-                SignUpText(),
+                //SignUpButton(),
+
+                //SignUpText(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const Text(
+                      'Already have an account? ',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Login_Page()),
+                        );
+                      },
+                      child: Text(
+                        'Login',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           ),

@@ -113,10 +113,6 @@ class _Login_PageState extends State<Login_Page> {
               flex: 1,
               child: Container(
                 child: ClipRRect(
-                  // borderRadius: BorderRadius.only(
-                  //   bottomLeft: Radius.circular(60),
-                  //   bottomRight: Radius.circular(60),
-                  // ),
                   child: Image.asset(
                     'images/login_img.jpg',
                     fit: BoxFit.fill,
@@ -127,17 +123,18 @@ class _Login_PageState extends State<Login_Page> {
               ),
             ),
             Expanded(
-                flex: 2,
-                child: Container(
-                  color: Colors.black,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(40),
-                      topRight: Radius.circular(40),
-                    ),
-                    child: Input(),
+              flex: 2,
+              child: Container(
+                color: Colors.black,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40),
                   ),
-                ))
+                  child: Input(),
+                ),
+              ),
+            )
           ],
         ),
       ),

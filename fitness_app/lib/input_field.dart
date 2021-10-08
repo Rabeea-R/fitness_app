@@ -1,5 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'const.dart';
+import 'plans.dart';
 
 class InputField extends StatefulWidget {
   const InputField({Key? key}) : super(key: key);
@@ -62,10 +66,12 @@ class Register_fields extends StatefulWidget {
 }
 
 class _Register_fieldsState extends State<Register_fields> {
-  String name = 'name';
-  String email = 'email';
-  String password = 'password';
-  String re_password = 'repassword';
+  final _auth = FirebaseAuth.instance;
+  final firestore = FirebaseFirestore.instance;
+  String name = '';
+  String email = '';
+  String password = '';
+  String re_password = '';
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -135,6 +141,42 @@ class _Register_fieldsState extends State<Register_fields> {
                 hintText: "Re Enter Password",
                 hintStyle: TextStyle(color: Colors.grey),
                 border: InputBorder.none),
+          ),
+        ),
+        SizedBox(height: 50),
+        Container(
+          height: 50,
+          margin: EdgeInsets.symmetric(horizontal: 70),
+          child: ElevatedButton(
+            onPressed: () async {
+              try {
+                final newUser = await _auth.createUserWithEmailAndPassword(
+                    email: email, password: password);
+                if (newUser != null) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Plans()),
+                  );
+                }
+              } catch (e) {
+                print(e);
+              }
+            },
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+            ),
+            child: const Center(
+              child: Text(
+                'Sign Up',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
         ),
       ],

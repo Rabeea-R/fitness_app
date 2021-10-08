@@ -1,5 +1,6 @@
 import 'package:fitness_app/const.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Plans extends StatefulWidget {
   static final String routeName = '/plans';
@@ -10,6 +11,14 @@ class Plans extends StatefulWidget {
 }
 
 class _PlansState extends State<Plans> {
+  final _auth = FirebaseAuth.instance;
+
+  void getCurrentUser() async {
+    //if(_auth.currentUser!())
+    //final user = await _auth.currentUser();
+    // if (user != null) {}
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
