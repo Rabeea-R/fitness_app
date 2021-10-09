@@ -13,21 +13,50 @@ class _Main_PageState extends State<Main_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: Expanded(
           child: Container(
-            child: Column(
-              children: [
-                TextButton(
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Add_Plan()),
                       );
                     },
-                    child: Text('Add Plans')),
-                TextButton(onPressed: () {}, child: Text('View Subscriptions'))
-              ],
+                    child: const Text(
+                      'Add Plans',
+                    ),
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      backgroundColor: Colors.grey,
+                      textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('View Subscriptions'),
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      backgroundColor: Colors.grey,
+                      textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

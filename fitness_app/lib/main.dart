@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.green,
         ),
-        //home: Main_Page(),
-        home: MyHomePage(),
+        home: Main_Page(),
+        //home: MyHomePage(),
         debugShowCheckedModeBanner: false,
         routes: {
           Sliderr.routeName: (context) => Sliderr(),
